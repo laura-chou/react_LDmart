@@ -1,0 +1,30 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "White Pepper",
+            "description": "Organic white pepper.",
+            "mainCategoryId": 1,
+            "mainCategoryName": "Grocery",
+            "subCategoryId": 1,
+            "subCategoryName": "Herbs & Spices",
+            "price": 1.99,
+            "inventory": 999,
+            "brandId": 1,
+            "brandName": "Simply Organics"
+          },
+          {
+            "id": 2,
+            "name": "Montreal Steak Seasoning",
+            "description": "Shake on this iconic blend of coarsely ground peppers, garlic and spices for bolder tasting beef, pork and seafood.",
+            "mainCategoryId": 1,
+            "mainCategoryName": "Grocery",
+            "subCategoryId": 1,
+            "subCategoryName": "Herbs & Spices",
+            "price": 4.50,
+            "inventory": 999,
+            "brandId": 2,
+            "brandName": "McCormick Grill Mates"
+          }
+    ]
+}
