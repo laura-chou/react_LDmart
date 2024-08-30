@@ -1,0 +1,12 @@
+.navbar {
+  background-color: var(--logo-blue);
+}
+.navbar a {
+  color: var(--logo-white);
+  text-decoration: none;
+  font-size: 16px;
+}
+.homeIcon {
+  font-size: 21px;
+  margin-right: 5px;
+}
