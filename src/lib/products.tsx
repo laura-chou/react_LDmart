@@ -15,24 +15,23 @@ interface ProductsData {
   brandName: string;
 }
 
-const jsonDirectory = path.join(process.cwd(), 'json');
+const jsonDirectory = path.join(process.cwd(), './src/json');
 
 export function getSortedProductsData(): ProductsData[] {
+  if (!fs.existsSync(jsonDirectory)) {
+    throw new Error(`Directory not found: ${jsonDirectory}`);
+  }
+
   const fileNames = fs.readdirSync(jsonDirectory);
   
-  const allPostsData: ProductsData[] = fileNames.map((fileName) => {
-    const id = parseInt(fileName.replace(/\.json$/, ''), 10);
-
+  const allData: ProductsData[] = fileNames.flatMap((fileName) => {
     const fullPath = path.join(jsonDirectory, fileName);
     const fileContents = fs.readFileSync(fullPath, 'utf8');
 
-    const postData = JSON.parse(fileContents) as Omit<ProductsData, 'id'>;
-
-    return {
-      id,
-      ...postData,
-    };
+    const data = JSON.parse(fileContents);
+    
+    return Object.values(data);
   });
 
-  return allPostsData
+  return allData;
 }
