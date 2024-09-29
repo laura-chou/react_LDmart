@@ -1,0 +1,22 @@
+.card {
+  width: 300px;
+  height: 365px;
+}
+
+.cardText {
+  height: 25px;
+  overflow:hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.objectFitContainer {
+  width: 300px;
+  height: 200px;
+}
+
+.objectFitContainer img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
