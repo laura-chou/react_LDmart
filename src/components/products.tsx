@@ -31,15 +31,17 @@ const ProductsSection: React.FC<ProductsSectionProps> = ({ allData }) => {
       <Container>
         <Row>
           {allData.map((product) => (
-            <Col xs="auto" md="4" lg="4" key={product.id}>
+            <Col xs="6" md="4" lg="3" key={product.id} className='mt-3'>
               <Card className={styles.card}>
                 <div className={styles.objectFitContainer}>
                   <Card.Img variant="top" src={`products/1-1-${product.id}.jpg`} />
                 </div>
                 <Card.Body>
-                  <Card.Title>{product.name}</Card.Title>
-                  <Card.Subtitle className="mb-2 text-muted">{product.brandName}</Card.Subtitle>
-                  <Card.Text className={styles.cardText}>{product.description}</Card.Text>
+                  <div className={styles.cardBody}>
+                    <Card.Title>{product.name}</Card.Title>
+                    <Card.Subtitle className="mb-2 text-muted">{product.brandName}</Card.Subtitle>
+                    <Card.Text className={styles.cardText}>{product.description}</Card.Text>
+                  </div>
                   <div className="d-flex justify-content-end">
                     <Button variant="primary" className='me-2'>
                       <HeartFill/>
