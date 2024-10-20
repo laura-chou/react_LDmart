@@ -1,9 +1,5 @@
 import React from 'react';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
+import { Container, Row, Col, Button, Card } from 'react-bootstrap';
 import { HeartFill, CartPlusFill } from "react-bootstrap-icons";
 import styles from './products.module.css';
 
@@ -38,7 +34,7 @@ const ProductsSection: React.FC<ProductsSectionProps> = ({ allData }) => {
                 </div>
                 <Card.Body>
                   <div className={styles.cardBody}>
-                    <Card.Title>{product.name}</Card.Title>
+                    <Card.Title><a className={styles.cardTitle} href="">{product.name}</a></Card.Title>
                     <Card.Subtitle className="mb-2 text-muted">{product.brandName}</Card.Subtitle>
                     <Card.Text className={styles.cardText}>{product.description}</Card.Text>
                   </div>

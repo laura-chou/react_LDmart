@@ -2,6 +2,10 @@
   height: 100%;
 }
 
+.cardTitle {
+  text-decoration: none;
+}
+
 .cardText {
   height: 25px;
   overflow:hidden;
