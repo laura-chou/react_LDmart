@@ -9,7 +9,7 @@ export default function Page({ products }) {
     <>
       <NavbarSection/>
       <SearchSection/>
-      <ProductsSection allData={products} />
+      <ProductsSection products={products}/>
     </>
   );
 }

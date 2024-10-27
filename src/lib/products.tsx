@@ -1,30 +1,36 @@
 import fs from 'fs';
 import path from 'path';
 
-interface ProductsData {
-  id: number;
-  name: string;
-  description: string;
-  mainCategoryId: number;
-  mainCategoryName: string;
-  subCategoryId: number;
-  subCategoryName: string;
-  price: number;
-  inventory: number;
-  brandId: number;
-  brandName: string;
+interface Products {
+  mainCategoryId: number
+  mainCategoryName: string
+  subCategory: SubCategory[]
+}
+interface SubCategory {
+  id: number
+  name: string
+  items: SubCategoryItem[]
+}
+interface SubCategoryItem {
+  id: number
+  name: string,
+  description: string
+  price: number
+  inventory: number
+  brandId: number
+  brandName: number
 }
 
 const jsonDirectory = path.join(process.cwd(), './src/json');
 
-export function getSortedProductsData(): ProductsData[] {
+export function getSortedProductsData(): Products[] {
   if (!fs.existsSync(jsonDirectory)) {
     throw new Error(`Directory not found: ${jsonDirectory}`);
   }
 
   const fileNames = fs.readdirSync(jsonDirectory);
   
-  const allData: ProductsData[] = fileNames.flatMap((fileName) => {
+  const allData: Products[] = fileNames.flatMap((fileName) => {
     const fullPath = path.join(jsonDirectory, fileName);
     const fileContents = fs.readFileSync(fullPath, 'utf8');
 
